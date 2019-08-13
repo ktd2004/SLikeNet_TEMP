@@ -3,7 +3,7 @@
 # Please see licenses/RakNet license.txt for the underlying license and related copyright.
 #
 #
-# Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
+# Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschrankt)
 #
 # This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
 # license found in the license.txt file in the root directory of this source tree.
@@ -28,7 +28,11 @@ ENDIF(WIN32 AND NOT UNIX)
 target_link_libraries (RakNetLibStatic ${RAKNET_LIBRARY_LIBS})
 IF(WIN32 AND NOT UNIX)
 	IF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
-		set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
+        IF( MSVC_VERSION LESS_EQUAL 1500 )
+            set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:&quot;LIBCD.lib LIBCMTD.lib MSVCRT.lib&quot;" )
+        ELSE()
+            set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
+        ENDIF()
 	ENDIF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
 ELSE(WIN32 AND NOT UNIX)
 	INSTALL(TARGETS RakNetLibStatic DESTINATION lib)
