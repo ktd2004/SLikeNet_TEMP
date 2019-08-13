@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschrankt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -35,5 +35,11 @@
 // winsock2.h(199) : error C2011: 'hostent' : 'struct' type redefinition
 // winsock2.h(212) : error C2011: 'netent' : 'struct' type redefinition
 // winsock2.h(219) : error C2011: 'servent' : 'struct' type redefinition 
+
+
+#if _MSC_VER < 1600
+#include "nullptr_emulation.h"
+#endif
+
 
 #endif
