@@ -1389,7 +1389,7 @@ void RakString::Assign(const char *str, va_list ap)
 	}
 
 	char stackBuff[512];
-	int numChars = vsnprintf_s(stackBuff, 511, str, ap);
+	int numChars = vsnprintf_s(stackBuff, 512, _TRUNCATE, str, ap);
 	if (numChars != -1)
 	{
 		Assign(stackBuff);

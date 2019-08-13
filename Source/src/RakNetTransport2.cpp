@@ -63,7 +63,7 @@ void RakNetTransport2::Send( SystemAddress systemAddress, const char *data, ... 
 	char text[REMOTE_MAX_TEXT_INPUT];
 	va_list ap;
 	va_start(ap, data);
-	vsnprintf_s(text, REMOTE_MAX_TEXT_INPUT-1, data, ap);
+	vsnprintf_s(text, REMOTE_MAX_TEXT_INPUT, _TRUNCATE, data, ap);
 	va_end(ap);
 
 	SLNet::BitStream str;
