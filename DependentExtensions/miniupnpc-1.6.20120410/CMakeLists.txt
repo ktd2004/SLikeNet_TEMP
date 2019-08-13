@@ -29,7 +29,7 @@ if (NO_GETADDRINFO)
 endif (NO_GETADDRINFO)
 
 if (NOT WIN32)
-  add_definitions (-DMINIUPNPC_SET_SOCKET_TIMEOUT)
+  add_definitions (-D_DEFAULT_SOURCE -DMINIUPNPC_SET_SOCKET_TIMEOUT)
 else (NOT WIN32)
   add_definitions (-D_WIN32_WINNT=0x0501) # XP or higher for getnameinfo and friends
 endif (NOT WIN32)
@@ -76,6 +76,7 @@ set (MINIUPNPC_SOURCES
   upnperrors.c
   connecthostport.c
   portlistingparse.c
+  receivedata.c
 )
 
 if (NOT WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "AmigaOS")
@@ -137,6 +138,7 @@ if (UPNPC_BUILD_TESTS)
                                    igd_desc_parse.c minixml.c miniupnpc.c miniwget.c minissdpc.c
                                    upnpcommands.c upnpreplyparse.c minisoap.c connecthostport.c
                                    portlistingparse.c
+                                   receivedata.c
   )
   target_link_libraries (testigddescparse ${LDLIBS})
 
@@ -144,6 +146,7 @@ if (UPNPC_BUILD_TESTS)
                                miniwget.c miniupnpc.c minisoap.c upnpcommands.c minissdpc.c
                                upnpreplyparse.c minixml.c igd_desc_parse.c connecthostport.c
                                portlistingparse.c
+                               receivedata.c
   )
   target_link_libraries (testminiwget ${LDLIBS})
 
