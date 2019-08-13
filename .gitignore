@@ -1,0 +1,15 @@
+/CMakeCache.txt
+/CMakeFiles/
+/Lib/CMakeFiles/
+/Lib/DLL/CMakeFiles/
+/Lib/DLL/Makefile
+/Lib/DLL/cmake_install.cmake
+/Lib/DLL/libRakNetDLL.so
+/Lib/LibStatic/CMakeFiles/
+/Lib/LibStatic/Makefile
+/Lib/LibStatic/cmake_install.cmake
+/Lib/LibStatic/libRakNetLibStatic.a
+/Lib/Makefile
+/Lib/cmake_install.cmake
+/Makefile
+/cmake_install.cmake
