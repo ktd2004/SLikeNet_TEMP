@@ -29,7 +29,7 @@ if (NO_GETADDRINFO)
 endif (NO_GETADDRINFO)
 
 if (NOT WIN32)
-  add_definitions (-D_DEFAULT_SOURCE -DMINIUPNPC_SET_SOCKET_TIMEOUT)
+  add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -DMINIUPNPC_SET_SOCKET_TIMEOUT)
 else (NOT WIN32)
   add_definitions (-D_WIN32_WINNT=0x0501) # XP or higher for getnameinfo and friends
 endif (NOT WIN32)
