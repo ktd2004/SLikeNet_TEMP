@@ -427,6 +427,8 @@ public:
 	/// \param[in] target The SystemAddress of the remote system. Usually the same for all systems, unless you have two or more network cards.
 	SystemAddress GetExternalID( const SystemAddress target ) const;
 
+	/// Set my own GUID
+	void SetMyGUID(const RakNetGUID& guid);
 	/// Return my own GUID
 	const RakNetGUID GetMyGUID(void) const;
 
